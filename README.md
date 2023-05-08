@@ -1,2 +1,3 @@
-# SQL
-SQL Portfolio
+# Ethan McShane's SQL Portfolio
+
+## Welcome to my SQL Portfolio! This code repository contains examples of SQL I've written. Feel free to take a look around and reach out via email if you have any questions: ethanm204@comcast.net
