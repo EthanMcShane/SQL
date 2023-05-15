@@ -1,0 +1,67 @@
+/* Create table about the people and what they do here */
+
+CREATE TABLE celebrities (
+id INTEGER PRIMARY KEY AUTOINCREMENT,
+name TEXT,
+age INTEGER,
+home_state TEXT,
+birthmonth TEXT);
+
+INSERT INTO celebrities VALUES (1, "Denzel Washington", 68,"New York", "December");
+INSERT INTO celebrities VALUES (2, "Michael B Jordan", 36, "California", "February");
+INSERT INTO celebrities VALUES (3, "Dwayne The Rock Johnson", 51, "California", "May");
+INSERT INTO celebrities VALUES (4,"Jada Pinkett Smith", 51, 'Maryland', "September"); 
+INSERT INTO celebrities VALUES (5,"Will Smith", 54, "Pennsylvania", "September");
+INSERT INTO celebrities VALUES (6,"J.Cole", 38, "North Carolina", "January"); 
+INSERT INTO celebrities VALUES (7, "Robert Downey Jr", 57, "New York", "April");   
+INSERT INTO celebrities VALUES (8, "Morgan Freeman", 85, "Tennessee", "June");
+INSERT INTO celebrities VALUES (9, "Rober De Niro", 79, "New York", "August");   
+INSERT INTO celebrities VALUES (10, "Leonardo DiCaprio", 48, "California", "November");
+
+CREATE TABLE movies (
+movies_id INTEGER ,
+name TEXT,
+release_year INTEGER,
+rating INTEGER);
+
+INSERT INTO movies VALUES (1, "Remember the Titans", 2000, 8);  
+INSERT INTO movies VALUES (2, "Fantastic Four", 2015, 4);
+INSERT INTO movies VALUES (3, "Moana", 2016, 7);
+INSERT INTO movies VALUES (4, "Girls Trip", 2017, 5); 
+INSERT INTO movies VALUES (5, "Men In Black", 1997, 8);
+INSERT INTO movies VALUES (7, "Tropic Thunder", 2008, 7); 
+INSERT INTO movies VALUES (8, "RED", 2010, 7);
+INSERT INTO movies VALUES (9, "The Intern", 2015, 6);
+INSERT INTO movies VALUES (10, "The Wolf of Wall Street", 2013, 9);
+
+CREATE TABLE married (
+married_id INTEGER,
+name TEXT,
+married_status TEXT); 
+
+INSERT INTO married VALUES (1, "Denzel Washington", "Yes");
+INSERT INTO married VALUES (2, "Michael B Jordan", "No");
+INSERT INTO married VALUES (3, "Dwayne The Rock Johnson", "Yes");
+INSERT INTO married VALUES (4, "Jada Pinkett Smith", "Yes");
+INSERT INTO married VALUES (5, "Will Smith", "Yes");
+INSERT INTO married VALUES (6, "J.Cole", "Yes");
+INSERT INTO married VALUES (7, "Robert Downey Jr", "Yes");
+INSERT INTO married VALUES (8, "Morgan Freeman", "No");
+INSERT INTO married VALUES (9, "Rober De Niro", "Yes");
+INSERT INTO married VALUES (10, "Leonardo DiCaprio", "No");
+
+SELECT * 
+FROM celebrities; 
+
+SELECT * 
+FROM movies;
+
+SELECT *
+FROM married;
+
+SELECT celebrities.name, movies.name, movies.rating, movies.release_year
+FROM celebrities
+JOIN movies 
+ON celebrities.id = movies.movies_id
+WHERE rating > 5
+ORDER By rating desc;
